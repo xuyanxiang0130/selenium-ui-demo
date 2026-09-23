@@ -1,0 +1,25 @@
+# 虚拟环境
+venv/
+.venv/
+
+# pytest缓存
+.pytest_cache/
+
+# python缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 日志、截图、报告（可选：如果想保留截图示例，可以注释掉screenshots）
+logs/
+report/
+# screenshots/
+
+# IDE配置
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

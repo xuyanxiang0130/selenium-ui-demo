@@ -1,0 +1,17 @@
+cart_cases:
+  - case_name: 加购背包，校验购物车商品数量等于1
+    action: add_item_check_count
+    add_item_name: Sauce Labs Backpack
+    expect_item_count: 1
+  - case_name: 加购背包，校验购物车商品名称
+    action: check_item_name
+    add_item_name: Sauce Labs Backpack
+    expect_name_keyword: Sauce Labs Backpack
+  - case_name: 添加商品后删除，购物车商品数量为0
+    action: remove_item_check_empty
+    add_item_name: Sauce Labs Backpack
+    expect_item_count: 0
+  - case_name: 加购商品，点击结算，校验跳转结算页面
+    action: go_to_checkout
+    add_item_name: Sauce Labs Backpack
+    expect_url_keyword: checkout

@@ -1,0 +1,45 @@
+# ========== 登录模块（你原有login_data可以合并进来，也可以分开，这里合并方便管理） ==========
+login_success:
+  username: "standard_user"
+  password: "secret_sauce"
+login_locked:
+  username: "locked_out_user"
+  password: "secret_sauce"
+login_wrong_pwd:
+  username: "standard_user"
+  password: "123456"
+login_empty_user:
+  username: ""
+  password: "secret_sauce"
+login_empty_pwd:
+  username: "standard_user"
+  password: ""
+
+# ========== 商品列表模块 ==========
+inventory:
+  page_title: "Products"
+  total_item_count: 6
+items:
+  backpack:
+    add_loc_id: "add-to-cart-sauce-labs-backpack"
+    item_name_keyword: "Backpack"
+  bike_light:
+    add_loc_id: "add-to-cart-sauce-labs-bike-light"
+  tshirt:
+    add_loc_id: "add-to-cart-sauce-labs-bolt-t-shirt"
+
+# ========== 购物车模块 ==========
+cart:
+  checkout_url_keyword: "checkout"
+
+# ========== 结算模块 ==========
+checkout_valid_info:
+  firstname: "Zhang"
+  lastname: "San"
+  postal_code: "510000"
+checkout_empty_info:
+  firstname: ""
+  lastname: ""
+  postal_code: ""
+checkout_success_msg_keyword: "Thank you"
+checkout_error_keyword: "Error"

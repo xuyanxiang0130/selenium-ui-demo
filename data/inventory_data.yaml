@@ -1,0 +1,13 @@
+inventory_cases:
+  - case_name: 校验商品页标题和商品数量
+    action: check_page_info
+    expect_title: "Products"
+    expect_goods_num: 6
+
+  - case_name: 商品名称A-Z升序排序
+    action: sort_name_asc
+    expect_first_name: "Sauce Labs Backpack"
+
+  - case_name: 商品价格由低到高排序
+    action: sort_price_asc
+    expect_first_price: "$7.99"

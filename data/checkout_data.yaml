@@ -1,0 +1,15 @@
+# checkout 结算模块测试数据
+checkout_valid_info:
+  firstname: "Tom"
+  lastname: "Smith"
+  postal_code: "510000"
+
+checkout_success_msg_keyword: "Thank you for your order"
+checkout_error_keyword: "Error: First Name is required"
+
+# 这里可以放你之前cart模块用到的数据，可选
+items:
+  backpack:
+    item_name_keyword: "Sauce Labs Backpack"
+cart:
+  checkout_url_keyword: "checkout"
