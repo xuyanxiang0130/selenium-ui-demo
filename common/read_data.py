@@ -6,3 +6,6 @@ def get_yaml_data(file_path):
     log.info(f"读取测试数据文件: {file_path}")
     with open(file_path, encoding="utf-8") as f:
         return yaml.safe_load(f)
+
+# 新增别名，兼容read_yaml导入写法
+read_yaml = get_yaml_data

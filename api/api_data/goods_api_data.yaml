@@ -1,0 +1,9 @@
+goods_case:
+  - case_name: 默认分页查询商品
+    page: 1
+    size: 10
+    expect_code: 200
+  - case_name: 第2页商品列表查询
+    page: 2
+    size: 20
+    expect_code: 200

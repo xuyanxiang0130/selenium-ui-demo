@@ -1,0 +1,9 @@
+login_case:
+  - case_name: 正常登录
+    username: "admin"
+    password: "123456"
+    expect_code: 200
+  - case_name: 用户名为空
+    username: ""
+    password: "123456"
+    expect_code: 200
