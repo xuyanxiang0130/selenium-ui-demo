@@ -1,26 +1,23 @@
-# data/login_data.yaml
 login_cases:
-  - case_name: 正常登录
-    username: "standard_user"
-    password: "secret_sauce"
-    expect: "success"
-
-  - case_name: 锁定用户登录
-    username: "locked_out_user"
-    password: "secret_sauce"
-    expect: "locked"
-
-  - case_name: 密码错误
-    username: "standard_user"
-    password: "123456"
-    expect: "wrong_pwd"
-
+  # 正向主干 → smoke
+  - case_name: 正常账号密码登录
+    username: standard_user
+    password: secret_sauce
+    expect: success
+    tag: smoke
+  # 异常用例 → negative
   - case_name: 用户名为空
     username: ""
-    password: "secret_sauce"
-    expect: "empty_user"
-
+    password: secret_sauce
+    expect: empty_user
+    tag: negative
   - case_name: 密码为空
-    username: "standard_user"
+    username: standard_user
     password: ""
-    expect: "empty_pwd"
+    expect: empty_pwd
+    tag: negative
+  - case_name: 密码错误
+    username: standard_user
+    password: wrong_pwd
+    expect: wrong_pwd
+    tag: negative

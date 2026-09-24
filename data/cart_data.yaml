@@ -1,17 +1,23 @@
 cart_cases:
-  - case_name: 加购背包，校验购物车商品数量等于1
+  # 主干流程 → smoke
+  - case_name: 添加商品校验购物车数量
     action: add_item_check_count
-    add_item_name: Sauce Labs Backpack
+    add_item_name: "Sauce Labs Backpack"
     expect_item_count: 1
-  - case_name: 加购背包，校验购物车商品名称
-    action: check_item_name
-    add_item_name: Sauce Labs Backpack
-    expect_name_keyword: Sauce Labs Backpack
-  - case_name: 添加商品后删除，购物车商品数量为0
-    action: remove_item_check_empty
-    add_item_name: Sauce Labs Backpack
-    expect_item_count: 0
-  - case_name: 加购商品，点击结算，校验跳转结算页面
+    tag: smoke
+  - case_name: 购物车跳转结算页
     action: go_to_checkout
-    add_item_name: Sauce Labs Backpack
-    expect_url_keyword: checkout
+    add_item_name: "Sauce Labs Backpack"
+    expect_url_keyword: "/checkout-step-one.html"
+    tag: smoke
+  # 次要校验 → 回归
+  - case_name: 校验购物车商品名称
+    action: check_item_name
+    add_item_name: "Sauce Labs Backpack"
+    expect_name_keyword: "Sauce Labs Backpack"
+    tag: regression
+  - case_name: 删除购物车商品校验数量
+    action: remove_item_check_empty
+    add_item_name: "Sauce Labs Backpack"
+    expect_item_count: 0
+    tag: regression

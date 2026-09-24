@@ -1,13 +1,16 @@
 inventory_cases:
-  - case_name: 校验商品页标题和商品数量
+  # 主干：进入商品页校验页面 → smoke
+  - case_name: 校验商品页基础信息
     action: check_page_info
     expect_title: "Products"
     expect_goods_num: 6
-
-  - case_name: 商品名称A-Z升序排序
+    tag: smoke
+  # 次要功能 → 归为回归，不进冒烟
+  - case_name: 商品名称升序排序校验
     action: sort_name_asc
     expect_first_name: "Sauce Labs Backpack"
-
-  - case_name: 商品价格由低到高排序
+    tag: regression
+  - case_name: 商品价格升序排序校验
     action: sort_price_asc
     expect_first_price: "$7.99"
+    tag: regression
