@@ -34,3 +34,4 @@ class Logger:
 
 # 全局单例，项目所有地方直接导入 log
 log = Logger().logger
+logger = log

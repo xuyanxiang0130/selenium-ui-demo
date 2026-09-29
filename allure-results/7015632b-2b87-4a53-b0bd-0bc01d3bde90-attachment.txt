@@ -1,0 +1,91 @@
+[32mINFO    [0m selenium_ui_auto:read_data.py:6 读取测试数据文件: D:\selenium-ui-demo\data\config.yaml
+[32mINFO    [0m selenium_ui_auto:conftest.py:185 【setup前置】创建临时商品测试数据
+[32mINFO    [0m selenium_ui_auto:api_base.py:39 【DEBUG】当前实例self.token的值：None
+[32mINFO    [0m selenium_ui_auto:api_base.py:43  发起POST请求 
+[32mINFO    [0m selenium_ui_auto:api_base.py:44 请求地址：https://httpbin.org/post
+[32mINFO    [0m selenium_ui_auto:api_base.py:45 请求头：{'Content-Type': 'application/json'}
+[32mINFO    [0m selenium_ui_auto:api_base.py:46 请求body：{'goods_name': '自动化临时商品', 'price': 66.6}
+[32mINFO    [0m selenium_ui_auto:api_base.py:47 请求params：None
+[32mINFO    [0m selenium_ui_auto:api_base.py:64 响应状态码：200
+[32mINFO    [0m selenium_ui_auto:api_base.py:65 响应内容：{
+  "args": {}, 
+  "data": "{\"goods_name\": \"\\u81ea\\u52a8\\u5316\\u4e34\\u65f6\\u5546\\u54c1\", \"price\": 66.6}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "75", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.32.5", 
+    "X-Amzn-Trace-Id": "Root=1-6abbe733-0ed73176651b7bf908355442"
+  }, 
+  "json": {
+    "goods_name": "\u81ea\u52a8\u5316\u4e34\u65f6\u5546\u54c1", 
+    "price": 66.6
+  }, 
+  "origin": "219.128.238.172", 
+  "url": "https://httpbin.org/post"
+}
+
+[32mINFO    [0m selenium_ui_auto:conftest.py:190 临时商品创建成功，goods_id: 10002
+[32mINFO    [0m selenium_ui_auto:conftest.py:196 【DB】商品数据插入mysql成功
+[32mINFO    [0m selenium_ui_auto:read_data.py:6 读取测试数据文件: D:\selenium-ui-demo\data\config.yaml
+[32mINFO    [0m selenium_ui_auto:api_base.py:39 【DEBUG】当前实例self.token的值：None
+[32mINFO    [0m selenium_ui_auto:api_base.py:43  发起GET请求 
+[32mINFO    [0m selenium_ui_auto:api_base.py:44 请求地址：https://httpbin.org/get
+[32mINFO    [0m selenium_ui_auto:api_base.py:45 请求头：{'Content-Type': 'application/json'}
+[32mINFO    [0m selenium_ui_auto:api_base.py:46 请求body：None
+[32mINFO    [0m selenium_ui_auto:api_base.py:47 请求params：{'page': 2, 'size': 20}
+[32mINFO    [0m selenium_ui_auto:api_base.py:64 响应状态码：200
+[32mINFO    [0m selenium_ui_auto:api_base.py:65 响应内容：{
+  "args": {
+    "page": "2", 
+    "size": "20"
+  }, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.32.5", 
+    "X-Amzn-Trace-Id": "Root=1-6abbe736-7ffdb3aa7b92c32766f848ef"
+  }, 
+  "origin": "219.128.238.172", 
+  "url": "https://httpbin.org/get?page=2&size=20"
+}
+
+[32mINFO    [0m selenium_ui_auto:test_goods_api.py:33 【DB查询结果】{'id': 3, 'goods_name': '自动化临时商品', 'price': Decimal('66.60'), 'create_time': datetime.datetime(2026, 9, 30, 0, 28, 31)}
+[32mINFO    [0m selenium_ui_auto:test_goods_api.py:36 ✅数据库校验通过，接口存储数据和数据库一致
+[32mINFO    [0m selenium_ui_auto:conftest.py:200 【teardown后置】清理临时商品
+[32mINFO    [0m selenium_ui_auto:api_base.py:39 【DEBUG】当前实例self.token的值：None
+[32mINFO    [0m selenium_ui_auto:api_base.py:43  发起DELETE请求 
+[32mINFO    [0m selenium_ui_auto:api_base.py:44 请求地址：https://httpbin.org/delete
+[32mINFO    [0m selenium_ui_auto:api_base.py:45 请求头：{'Content-Type': 'application/json'}
+[32mINFO    [0m selenium_ui_auto:api_base.py:46 请求body：{'goods_id': 10002}
+[32mINFO    [0m selenium_ui_auto:api_base.py:47 请求params：None
+[32mINFO    [0m selenium_ui_auto:api_base.py:64 响应状态码：200
+[32mINFO    [0m selenium_ui_auto:api_base.py:65 响应内容：{
+  "args": {}, 
+  "data": "{\"goods_id\": 10002}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "19", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.32.5", 
+    "X-Amzn-Trace-Id": "Root=1-6abbe736-01d76845018c52763249cff9"
+  }, 
+  "json": {
+    "goods_id": 10002
+  }, 
+  "origin": "219.128.238.172", 
+  "url": "https://httpbin.org/delete"
+}
+
+[32mINFO    [0m selenium_ui_auto:conftest.py:205 【DB】数据库临时商品已删除
+[32mINFO    [0m selenium_ui_auto:db_util.py:47 数据库连接关闭

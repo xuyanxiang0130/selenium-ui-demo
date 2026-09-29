@@ -33,7 +33,7 @@ def get_login_data():
     return case_list
 
 
-
+@pytest.mark.ui
 @pytest.mark.parametrize("case_name,username,password,expect_result", get_login_data())
 def test_login(case_name, username, password, expect_result, driver):
     login_page = LoginPage(driver)

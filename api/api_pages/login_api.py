@@ -1,17 +1,15 @@
-import requests
-from common.logger import log
+from api.api_pages.api_base import BaseApi
 
-class LoginApi:
-    base_url = "http://httpbin.org"
-
-    def post_login(self, username, password):
-        """模拟登录POST接口"""
-        url = f"{self.base_url}/post"
-        log.info(f"【接口请求】POST {url}, 请求参数：username={username},pwd={password}")
-        payload = {
+class LoginApi(BaseApi):
+    def login(self, username, password):
+        # httpbin的post接口，用来接收post请求，原样返回提交的数据
+        url_path = "/post"
+        json_data = {
             "username": username,
             "password": password
         }
-        resp = requests.post(url=url, json=payload)
-        log.info(f"【接口响应】状态码：{resp.status_code}, 返回内容：{resp.json()}")
+        resp = self.send_request(method="POST", url_path=url_path, data=json_data)
+        # 模拟提取token，存入当时login_api实例，真实业务：token = resp.json()["token"]
+        token = "abcdefg123456789token"
+        self.save_token(token)
         return resp

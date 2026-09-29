@@ -1,18 +1,32 @@
-import requests
-from common.logger import log
+from api.api_pages.api_base import BaseApi
 
-class GoodsApi:
-    base_url = "http://httpbin.org"
-
-    def get_goods_list(self, page=1, size=10):
-        """模拟获取商品列表GET接口"""
-        url = f"{self.base_url}/get"
-        # GET请求用params传参
+class GoodsApi(BaseApi):
+    def get_goods_list(self, page, size):
+        """获取商品列表接口"""
+        url_path = "/get"
         params = {
             "page": page,
             "size": size
         }
-        log.info(f"【接口请求】GET {url}, 查询参数：page={page},size={size}")
-        resp = requests.get(url=url, params=params)
-        log.info(f"【接口响应】状态码：{resp.status_code}, 返回参数：{resp.json()['args']}")
+        resp = self.send_request(method="GET", url_path=url_path,params=params)
+        return resp
+
+    # 追加到你现有的 GoodsApi 类里面，新增两个方法
+    def add_goods(self, goods_name, price):
+        """新增商品接口，用来造测试数据"""
+        url_path = "/post"
+        data = {
+            "goods_name": goods_name,
+            "price": price
+        }
+        resp = self.send_request("POST", url_path=url_path, data=data)
+        return resp
+
+    def delete_goods(self, goods_id):
+        """删除商品接口，清理测试数据"""
+        url_path = "/delete"
+        data = {
+            "goods_id": goods_id
+        }
+        resp = self.send_request("DELETE", url_path=url_path, data=data)
         return resp

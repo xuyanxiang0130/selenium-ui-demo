@@ -11,6 +11,10 @@ logs/
 screenshots/
 report/
 
+# allure报告产物
+allure-results/
+allure-report/
+
 # 编译缓存
 __pycache__/
 *.pyc

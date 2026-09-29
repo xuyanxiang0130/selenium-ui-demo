@@ -1,0 +1,47 @@
+test_get:
+  - case_name: "正常GET不带参数"
+    params: null
+    expect_code: 200
+  - case_name: "GET携带普通参数"
+    params:
+      name: "test_user"
+      age: 22
+    expect_code: 200
+  - case_name: "GET携带特殊字符参数"
+    params:
+      msg: "auto@test#2026"
+    expect_code: 200
+  # 新增GET反向/边界用例
+  - case_name: "GET参数传空字符串"
+    params:
+      name: ""
+    expect_code: 200
+  - case_name: "GET参数传超长字符串"
+    params:
+      name: "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+    expect_code: 200
+
+test_post:
+  - case_name: "POST正常json提交"
+    data:
+      username: "test001"
+      password: "123456abc"
+    expect_code: 200
+  - case_name: "POST空json提交"
+    data: {}
+    expect_code: 200
+  # 新增POST反向用例
+  - case_name: "POST用户名空，密码正常"
+    data:
+      username: ""
+      password: "123456abc"
+    expect_code: 200
+  - case_name: "POST密码空，用户名正常"
+    data:
+      username: "test001"
+      password: ""
+    expect_code: 200
+  - case_name: "POST不传username必传字段"
+    data:
+      password: "123456abc"
+    expect_code: 200

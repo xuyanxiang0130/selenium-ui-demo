@@ -7,7 +7,7 @@ from common.logger import log
 
 data = get_yaml_data("data/checkout_data.yaml")
 
-
+@pytest.mark.ui
 @pytest.mark.smoke
 def test_checkout_full_flow(logged_in_driver):
     """完整下单流程，从加购到下单成功【smoke主干用例】"""

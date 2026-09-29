@@ -1,0 +1,31 @@
+# 全局环境选择：dev / test
+env: dev
+
+# 多环境配置
+env_config:
+  dev:
+    base_url: "https://httpbin.org"
+    timeout: 10
+  test:
+    base_url: "https://www.saucedemo.com"
+    timeout: 10
+
+# 全局日志级别
+log_level: INFO
+# 数据库配置
+db_config:
+  dev:
+    host: "127.0.0.1"
+    port: 3306
+    user: "root"
+    password: "@Xyx5201314"
+    database: "test_auto" # 你需要提前在mysql创建这个库 test_auto
+    charset: "utf8mb4"
+  test:
+    host: "127.0.0.1"
+    port: 3306
+    user: "root"
+    password: "@Xyx5201314"
+    database: "test_auto_test"
+    charset: "utf8mb4"
+

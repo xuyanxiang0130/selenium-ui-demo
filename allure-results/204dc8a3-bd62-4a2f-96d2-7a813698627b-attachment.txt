@@ -1,0 +1,22 @@
+响应状态码：200
+响应内容：{
+  "args": {}, 
+  "data": "{\"goods_name\": \"\\u81ea\\u52a8\\u5316\\u4e34\\u65f6\\u5546\\u54c1\", \"price\": 66.6}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "75", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.32.5", 
+    "X-Amzn-Trace-Id": "Root=1-6abbe733-0ed73176651b7bf908355442"
+  }, 
+  "json": {
+    "goods_name": "\u81ea\u52a8\u5316\u4e34\u65f6\u5546\u54c1", 
+    "price": 66.6
+  }, 
+  "origin": "219.128.238.172", 
+  "url": "https://httpbin.org/post"
+}

@@ -30,7 +30,7 @@ def get_cart_data():
         )
     return case_list
 
-
+@pytest.mark.ui
 @pytest.mark.parametrize(
     "case_name, action, add_item_name, expect_item_count, expect_name_keyword, expect_url_keyword",
     get_cart_data()

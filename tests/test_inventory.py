@@ -34,7 +34,7 @@ def get_inventory_data():
     return case_list
 
 
-
+@pytest.mark.ui
 @pytest.mark.parametrize("case_name,action,expect_title,expect_goods_num,expect_first_name,expect_first_price", get_inventory_data())
 def test_inventory(case_name,action,expect_title,expect_goods_num,expect_first_name,expect_first_price, driver):
     log.info(f"\n=====执行用例：{case_name}=====")

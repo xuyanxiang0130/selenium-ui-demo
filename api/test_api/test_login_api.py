@@ -1,16 +1,19 @@
+# 单独登录接口正向用例，直接调用 LoginApi，校验账号密码回传结果
 import pytest
 from api.api_pages.login_api import LoginApi
-from common.read_data import read_yaml
+import allure
 
-# 读取yaml接口测试数据
-login_data = read_yaml("api/api_data/login_api_data.yaml")["login_case"]
-
-class TestLoginApi:
-    @pytest.mark.api
-    @pytest.mark.parametrize("case", login_data)
-    def test_post_login(self, case):
-        """模拟登录接口测试"""
-        login_api = LoginApi()
-        resp = login_api.post_login(username=case["username"], password=case["password"])
-        # 断言：预期状态码
-        assert resp.status_code == case["expect_code"]
+@pytest.mark.api
+@pytest.mark.smoke
+@allure.feature("接口测试模块")
+@allure.story("用户登录模块")
+@allure.title("账号密码登录，正向登录场景")
+def test_login_api():
+    login_api = LoginApi()
+    resp = login_api.login("standard_user", "secret_sauce")
+    # 断言响应码200
+    assert resp.status_code == 200
+    # httpbin会回传你提交的json，校验返回内容
+    resp_json = resp.json()
+    assert resp_json["json"]["username"] == "standard_user"
+    assert resp_json["json"]["password"] == "secret_sauce"

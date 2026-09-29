@@ -1,0 +1,4 @@
+请求地址：https://httpbin.org/get
+请求头：{'Content-Type': 'application/json'}
+请求体：None
+请求参数：{'page': 2, 'size': 20}

@@ -1,0 +1,4 @@
+请求地址：https://httpbin.org/delete
+请求头：{'Content-Type': 'application/json'}
+请求体：{'goods_id': 10002}
+请求参数：None
