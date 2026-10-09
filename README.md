@@ -5,13 +5,13 @@
 - WebUI：Selenium + PO页面对象模式，显式等待，用例失败自动截图保存
 - 接口自动化：BaseApi基类封装，统一请求、token鉴权、请求日志输出
 - 数据驱动：YAML管理测试用例与多环境(dev/test)配置
-- 数据库：pymysql封装DB工具，**接口+MySQL双重断言**，校验业务数据落库正确性
+- 数据库：pymysql封装DB工具，接口+MySQL双重断言，校验业务数据落库正确性
 - 测试数据：pytest‑fixture完成前置造数据，teardown自动清理MySQL脏数据，保证每条用例独立运行
 - 报告日志：Allure可视化报告，全局日志记录接口请求、响应、数据库操作
-- 用例管理：mark标签 `smoke / regression / negative / ui / api`，支持筛选执行、失败重跑
+- 用例管理：mark标签 `smoke 、regression 、 negative 、 ui 、 api`，支持筛选执行、失败重跑
 
 ## 技术栈
-Python3.9 | Pytest | Selenium | Requests | PyMySQL | PyYAML | Allure‑pytest
+Python3.9 、 Pytest 、 Selenium 、 Requests 、 PyMySQL 、 PyYAML 、 Allure‑pytest
 
 # 项目目录结构
 - selenium-ui-demo/
@@ -102,7 +102,6 @@ pytest -m "smoke" -v -s --alluredir=allure-results
 allure generate allure-results -o allure-report --clean
 allure open allure-report
 ```
-
 > 
 > 1. UI自动化会唤起浏览器，请提前配置Edge驱动；
 > 2. 修改`data/config.yaml`配置数据库host/user/password/database；
@@ -125,7 +124,7 @@ allure open allure-report
 #### 接口测试用例（api 标记）
 - POST 模拟登录接口，YAML 数据驱动（正常账号、空用户名）
 - GET 商品列表分页查询接口，增加MySQL数据库断言
-- 接口串联（接口关联）：登录模拟获取 token，携带 Token 鉴权访问用户信息接口
+- 接口串联：登录模拟获取 token，携带 Token 鉴权访问用户信息接口
 - pytest‑fixture自动构造商品测试数据，执行完成自动清理脏数据
 
 ## 项目功能亮点
